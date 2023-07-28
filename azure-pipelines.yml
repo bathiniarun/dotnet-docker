@@ -14,7 +14,6 @@ variables:
   dockerRegistryServiceConnection: 'ac4609b0-1f11-425c-9478-16eb4fa876a3'
   imageRepository: 'dotnetdocker'
   containerRegistry: 'dotnet1.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'dotnet117af-auth'
 
@@ -37,8 +36,8 @@ stages:
       displayName: Build and push an image to container registry
       inputs:
         command: buildAndPush
+        dockerfile: '**/Dockerfile'
         repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
