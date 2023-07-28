@@ -34,7 +34,7 @@ stages:
     steps:
     - task: DockerInstaller@0
   inputs:
-     dockerVersion: '17.09.0-ce'@2
+    dockerVersion: '17.09.0-ce'
      displayName: Build and push an image to container registry
   inputs:
         command: buildAndPush
