@@ -33,7 +33,7 @@ stages:
       name: $(vmImageName)
     steps:
     - task: DockerInstaller@0
-   inputs:
+  inputs:
      dockerVersion: '17.09.0-ce'@2
      displayName: Build and push an image to container registry
   inputs:
