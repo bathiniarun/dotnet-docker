@@ -43,7 +43,3 @@ stages:
         tags: |
           $(tag)
 
-    - upload: manifests
-      artifact: manifests
-
-
