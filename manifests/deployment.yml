@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: dotnetdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnetdocker
+  template:
+    metadata:
+      labels:
+        app: dotnetdocker 
+    spec:
+      containers:
+        - name: dotnetdocker 
+          image: dotnet1.azurecr.io/dotnetdocker
+          ports:
+          - containerPort: 5000
